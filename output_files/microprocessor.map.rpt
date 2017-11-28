@@ -1,0 +1,383 @@
+Analysis & Synthesis report for microprocessor
+Tue Nov 28 19:31:02 2017
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: dregister:s1
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Nov 28 19:31:02 2017       ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                      ; microprocessor                              ;
+; Top-level Entity Name              ; side_block                                  ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 27                                          ;
+;     Total combinational functions  ; 27                                          ;
+;     Dedicated logic registers      ; 8                                           ;
+; Total registers                    ; 8                                           ;
+; Total pins                         ; 16                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE22F17C6       ;                    ;
+; Top-level entity name                                                      ; side_block         ; microprocessor     ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                                        ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                  ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+; side_block.vhd                   ; yes             ; User VHDL File  ; D:/Moodle/EE_309/Microprocessor_pipeline/side_block.vhd       ;         ;
+; priority_encoder.vhd             ; yes             ; User VHDL File  ; D:/Moodle/EE_309/Microprocessor_pipeline/priority_encoder.vhd ;         ;
+; mux_2_1_8.vhd                    ; yes             ; User VHDL File  ; D:/Moodle/EE_309/Microprocessor_pipeline/mux_2_1_8.vhd        ;         ;
+; decoder.vhd                      ; yes             ; User VHDL File  ; D:/Moodle/EE_309/Microprocessor_pipeline/decoder.vhd          ;         ;
+; dregister.vhd                    ; yes             ; User VHDL File  ; D:/Moodle/EE_309/Microprocessor_pipeline/dregister.vhd        ;         ;
+; components.vhd                   ; yes             ; User VHDL File  ; D:/Moodle/EE_309/Microprocessor_pipeline/components.vhd       ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                        ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Estimated Total logic elements              ; 27                   ;
+;                                             ;                      ;
+; Total combinational functions               ; 27                   ;
+; Logic element usage by number of LUT inputs ;                      ;
+;     -- 4 input functions                    ; 15                   ;
+;     -- 3 input functions                    ; 9                    ;
+;     -- <=2 input functions                  ; 3                    ;
+;                                             ;                      ;
+; Logic elements by mode                      ;                      ;
+;     -- normal mode                          ; 27                   ;
+;     -- arithmetic mode                      ; 0                    ;
+;                                             ;                      ;
+; Total registers                             ; 8                    ;
+;     -- Dedicated logic registers            ; 8                    ;
+;     -- I/O registers                        ; 0                    ;
+;                                             ;                      ;
+; I/O pins                                    ; 16                   ;
+;                                             ;                      ;
+; Embedded Multiplier 9-bit elements          ; 0                    ;
+;                                             ;                      ;
+; Maximum fan-out node                        ; dregister:s1|dout[2] ;
+; Maximum fan-out                             ; 8                    ;
+; Total fan-out                               ; 145                  ;
+; Average fan-out                             ; 2.16                 ;
++---------------------------------------------+----------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                       ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name             ; Entity Name      ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+------------------+--------------+
+; |side_block                ; 27 (15)             ; 8 (0)                     ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |side_block                     ; side_block       ; work         ;
+;    |decoder:s0|            ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |side_block|decoder:s0          ; decoder          ; work         ;
+;    |dregister:s1|          ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |side_block|dregister:s1        ; dregister        ; work         ;
+;    |mux_2_1_8:s3|          ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |side_block|mux_2_1_8:s3        ; mux_2_1_8        ; work         ;
+;    |priority_encoder:s2|   ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |side_block|priority_encoder:s2 ; priority_encoder ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 8     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 8     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dregister:s1 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; nbits          ; 8     ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 16                          ;
+; cycloneiii_ff         ; 8                           ;
+;     ENA CLR           ; 8                           ;
+; cycloneiii_lcell_comb ; 28                          ;
+;     normal            ; 28                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 9                           ;
+;         4 data inputs ; 15                          ;
+;                       ;                             ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 5.52                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Tue Nov 28 19:30:49 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off microprocessor -c microprocessor
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file sixteenbitnand.vhd
+    Info (12022): Found design unit 1: sixteenbitnand-behave File: D:/Moodle/EE_309/Microprocessor_pipeline/sixteenbitnand.vhd Line: 13
+    Info (12023): Found entity 1: sixteenbitnand File: D:/Moodle/EE_309/Microprocessor_pipeline/sixteenbitnand.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file sixteenbitadder.vhd
+    Info (12022): Found design unit 1: sixteenbitadder-behave File: D:/Moodle/EE_309/Microprocessor_pipeline/sixteenbitadder.vhd Line: 14
+    Info (12023): Found entity 1: sixteenbitadder File: D:/Moodle/EE_309/Microprocessor_pipeline/sixteenbitadder.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file side_block.vhd
+    Info (12022): Found design unit 1: side_block-sta1 File: D:/Moodle/EE_309/Microprocessor_pipeline/side_block.vhd Line: 8
+    Info (12023): Found entity 1: side_block File: D:/Moodle/EE_309/Microprocessor_pipeline/side_block.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file se9.vhd
+    Info (12022): Found design unit 1: se9-simple File: D:/Moodle/EE_309/Microprocessor_pipeline/se9.vhd Line: 12
+    Info (12023): Found entity 1: se9 File: D:/Moodle/EE_309/Microprocessor_pipeline/se9.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file se6.vhd
+    Info (12022): Found design unit 1: se6-simple File: D:/Moodle/EE_309/Microprocessor_pipeline/se6.vhd Line: 12
+    Info (12023): Found entity 1: se6 File: D:/Moodle/EE_309/Microprocessor_pipeline/se6.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file rse9.vhd
+    Info (12022): Found design unit 1: rse9-simple File: D:/Moodle/EE_309/Microprocessor_pipeline/rse9.vhd Line: 12
+    Info (12023): Found entity 1: rse9 File: D:/Moodle/EE_309/Microprocessor_pipeline/rse9.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file register_file.vhd
+    Info (12022): Found design unit 1: register_file-sta1 File: D:/Moodle/EE_309/Microprocessor_pipeline/register_file.vhd Line: 8
+    Info (12023): Found entity 1: register_file File: D:/Moodle/EE_309/Microprocessor_pipeline/register_file.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file priority_encoder.vhd
+    Info (12022): Found design unit 1: priority_encoder-comb File: D:/Moodle/EE_309/Microprocessor_pipeline/priority_encoder.vhd Line: 6
+    Info (12023): Found entity 1: priority_encoder File: D:/Moodle/EE_309/Microprocessor_pipeline/priority_encoder.vhd Line: 2
+Info (12021): Found 2 design units, including 1 entities, in source file pipeline_writeback_register.vhd
+    Info (12022): Found design unit 1: pipeline_writeback_register-final File: D:/Moodle/EE_309/Microprocessor_pipeline/pipeline_writeback_register.vhd Line: 14
+    Info (12023): Found entity 1: pipeline_writeback_register File: D:/Moodle/EE_309/Microprocessor_pipeline/pipeline_writeback_register.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file pipeline_memory_register.vhd
+    Info (12022): Found design unit 1: pipeline_memory_register-final File: D:/Moodle/EE_309/Microprocessor_pipeline/pipeline_memory_register.vhd Line: 14
+    Info (12023): Found entity 1: pipeline_memory_register File: D:/Moodle/EE_309/Microprocessor_pipeline/pipeline_memory_register.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file pipeline_file_register.vhd
+    Info (12022): Found design unit 1: pipeline_file_register-final File: D:/Moodle/EE_309/Microprocessor_pipeline/pipeline_file_register.vhd Line: 20
+    Info (12023): Found entity 1: pipeline_file_register File: D:/Moodle/EE_309/Microprocessor_pipeline/pipeline_file_register.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file pipeline_execution_register.vhd
+    Info (12022): Found design unit 1: pipeline_execution_register-final File: D:/Moodle/EE_309/Microprocessor_pipeline/pipeline_execution_register.vhd Line: 14
+    Info (12023): Found entity 1: pipeline_execution_register File: D:/Moodle/EE_309/Microprocessor_pipeline/pipeline_execution_register.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file pipeline_decoder_register.vhd
+    Info (12022): Found design unit 1: pipeline_decoder_register-final File: D:/Moodle/EE_309/Microprocessor_pipeline/pipeline_decoder_register.vhd Line: 12
+    Info (12023): Found entity 1: pipeline_decoder_register File: D:/Moodle/EE_309/Microprocessor_pipeline/pipeline_decoder_register.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file onebitadd.vhd
+    Info (12022): Found design unit 1: onebitadd-sta File: D:/Moodle/EE_309/Microprocessor_pipeline/onebitadd.vhd Line: 13
+    Info (12023): Found entity 1: onebitadd File: D:/Moodle/EE_309/Microprocessor_pipeline/onebitadd.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file mux_8_1_16.vhd
+    Info (12022): Found design unit 1: mux_8_1_16-behv File: D:/Moodle/EE_309/Microprocessor_pipeline/mux_8_1_16.vhd Line: 7
+    Info (12023): Found entity 1: mux_8_1_16 File: D:/Moodle/EE_309/Microprocessor_pipeline/mux_8_1_16.vhd Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file mux_2_1_16.vhd
+    Info (12022): Found design unit 1: mux_2_1_16-sta File: D:/Moodle/EE_309/Microprocessor_pipeline/mux_2_1_16.vhd Line: 8
+    Info (12023): Found entity 1: mux_2_1_16 File: D:/Moodle/EE_309/Microprocessor_pipeline/mux_2_1_16.vhd Line: 2
+Info (12021): Found 2 design units, including 1 entities, in source file mux_2_1_8.vhd
+    Info (12022): Found design unit 1: mux_2_1_8-sta File: D:/Moodle/EE_309/Microprocessor_pipeline/mux_2_1_8.vhd Line: 8
+    Info (12023): Found entity 1: mux_2_1_8 File: D:/Moodle/EE_309/Microprocessor_pipeline/mux_2_1_8.vhd Line: 2
+Info (12021): Found 2 design units, including 1 entities, in source file decoder.vhd
+    Info (12022): Found design unit 1: decoder-LogicNetwork File: D:/Moodle/EE_309/Microprocessor_pipeline/decoder.vhd Line: 8
+    Info (12023): Found entity 1: decoder File: D:/Moodle/EE_309/Microprocessor_pipeline/decoder.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file data_memory.vhd
+    Info (12022): Found design unit 1: data_memory-behavioral File: D:/Moodle/EE_309/Microprocessor_pipeline/data_memory.vhd Line: 19
+    Info (12023): Found entity 1: data_memory File: D:/Moodle/EE_309/Microprocessor_pipeline/data_memory.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file code_memory.vhd
+    Info (12022): Found design unit 1: code_memory-behavioral File: D:/Moodle/EE_309/Microprocessor_pipeline/code_memory.vhd Line: 17
+    Info (12023): Found entity 1: code_memory File: D:/Moodle/EE_309/Microprocessor_pipeline/code_memory.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file alu.vhd
+    Info (12022): Found design unit 1: alu-behave File: D:/Moodle/EE_309/Microprocessor_pipeline/alu.vhd Line: 14
+    Info (12023): Found entity 1: alu File: D:/Moodle/EE_309/Microprocessor_pipeline/alu.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file controller.vhd
+    Info (12022): Found design unit 1: controller-LogicNetwork File: D:/Moodle/EE_309/Microprocessor_pipeline/controller.vhd Line: 12
+    Info (12023): Found entity 1: controller File: D:/Moodle/EE_309/Microprocessor_pipeline/controller.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file mux_gener.vhd
+    Info (12022): Found design unit 1: mux_gener-behavioral File: D:/Moodle/EE_309/Microprocessor_pipeline/mux_gener.vhd Line: 19
+    Info (12023): Found entity 1: mux_gener File: D:/Moodle/EE_309/Microprocessor_pipeline/mux_gener.vhd Line: 10
+Warning (12019): Can't analyze file -- file synch_mem.vhd is missing
+Info (12021): Found 2 design units, including 1 entities, in source file dregister.vhd
+    Info (12022): Found design unit 1: dregister-behave File: D:/Moodle/EE_309/Microprocessor_pipeline/dregister.vhd Line: 12
+    Info (12023): Found entity 1: dregister File: D:/Moodle/EE_309/Microprocessor_pipeline/dregister.vhd Line: 1
+Info (12021): Found 1 design units, including 0 entities, in source file components.vhd
+    Info (12022): Found design unit 1: components File: D:/Moodle/EE_309/Microprocessor_pipeline/components.vhd Line: 1
+Info (12127): Elaborating entity "side_block" for the top level hierarchy
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:s0" File: D:/Moodle/EE_309/Microprocessor_pipeline/side_block.vhd Line: 35
+Info (12128): Elaborating entity "dregister" for hierarchy "dregister:s1" File: D:/Moodle/EE_309/Microprocessor_pipeline/side_block.vhd Line: 37
+Info (12128): Elaborating entity "priority_encoder" for hierarchy "priority_encoder:s2" File: D:/Moodle/EE_309/Microprocessor_pipeline/side_block.vhd Line: 45
+Info (12128): Elaborating entity "mux_2_1_8" for hierarchy "mux_2_1_8:s3" File: D:/Moodle/EE_309/Microprocessor_pipeline/side_block.vhd Line: 46
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 51 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 4 output pins
+    Info (21061): Implemented 35 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 715 megabytes
+    Info: Processing ended: Tue Nov 28 19:31:02 2017
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:28
+
+

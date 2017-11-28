@@ -1,0 +1,96 @@
+library ieee;
+use ieee.std_logic_1164.all;
+library work;
+use work.components.all;
+
+entity pipeline_file_register is
+    port (clk ,en , clr : in bit;
+    pc_1_i , pc_i ,se_6_i ,se_6_9_i ,rese_9_i: in  bit_vector  (15 downto 0);
+    pc_1_o , pc_o ,se_6_o ,se_6_9_o ,rese_9_o: out  bit_vector  (15 downto 0);
+    ir_7_0_i: in bit_vector(7 downto 0);
+    ir_7_0_o: out bit_vector(7 downto 0);
+    cs_i: in bit_vector(15 downto 0);
+    cs_o: out bit_vector(15 downto 0);
+    A1_i , A2_i: in bit_vector(2 downto 0);
+    A1_o , A2_o: out bit_vector(2 downto 0)
+    );
+
+end entity;
+
+architecture final of pipeline_file_register is
+-------------------------------------------------------
+begin
+
+rf_pc: dregister generic map (nbits => 16)                    -- no. of bits
+  port map( 
+    din  => pc_i,
+    dout => pc_o,
+    enable => en,
+    clr => clr,
+    clk => clk);
+
+rf_pc_1: dregister generic map (nbits => 16)                    -- no. of bits
+  port map(
+    din  => pc_1_i,
+    dout => pc_1_o,
+    enable => en,
+    clr => clr,
+    clk => clk);
+
+rf_se6: dregister generic map (nbits => 16)                    -- no. of bits
+  port map(
+    din  => se_6_i,
+    dout => se_6_o,
+    enable => en,
+    clr => clr,
+    clk => clk);
+
+rf_se6_9: dregister generic map (nbits => 16)                    -- no. of bits
+  port map(
+    din  => se_6_9_i,
+    dout => se_6_9_o,
+    enable => en,
+    clr => clr,
+    clk => clk);
+
+rf_rese9: dregister generic map (nbits => 16)                    -- no. of bits
+  port map(
+    din  => rese_9_i,
+    dout => rese_9_o,
+    enable => en,
+    clr => clr,
+    clk => clk);
+
+rf_ir_7_0: dregister generic map (nbits => 8)                    -- no. of bits
+  port map(
+    din  => ir_7_0_i,
+    dout => ir_7_0_o,
+    enable => en,
+    clr => clr,
+    clk => clk);
+
+rf_cs: dregister generic map (nbits => 16)                    -- no. of bits
+  port map(
+    din  => cs_i,
+    dout => cs_o,
+    enable => en,
+    clr => clr,
+    clk => clk);
+
+rf_a1: dregister generic map (nbits => 3)                    -- no. of bits
+  port map(
+    din  => A1_i,
+    dout => A1_o,
+    enable => en,
+    clr => clr,
+    clk => clk);
+
+rf_a2: dregister generic map (nbits => 3)                    -- no. of bits
+  port map(
+    din  => A2_i,
+    dout => A2_o,
+    enable => en,
+    clr => clr,
+    clk => clk);
+
+end final;

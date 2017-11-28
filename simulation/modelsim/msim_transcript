@@ -1,0 +1,61 @@
+# Reading C:/intelFPGA_lite/17.1/modelsim_ase/tcl/vsim/pref.tcl
+# do microprocessor_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/17.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vcom -93 -work work {D:/Moodle/EE_309/Project2/components.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:01:32 on Nov 27,2017
+# vcom -reportprogress 300 -93 -work work D:/Moodle/EE_309/Project2/components.vhd 
+# -- Loading package STANDARD
+# -- Compiling package components
+# End time: 23:01:32 on Nov 27,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/Moodle/EE_309/Project2/controller.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:01:32 on Nov 27,2017
+# vcom -reportprogress 300 -93 -work work D:/Moodle/EE_309/Project2/controller.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package components
+# -- Compiling entity controller
+# -- Compiling architecture LogicNetwork of controller
+# End time: 23:01:32 on Nov 27,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.controller
+# vsim work.controller 
+# Start time: 23:01:40 on Nov 27,2017
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.components
+# Loading work.controller(logicnetwork)
+add wave -position end  sim:/controller/opcode
+add wave -position end  sim:/controller/clk
+add wave -position end  sim:/controller/cs
+run
+force -freeze sim:/controller/opcode 0001 0
+run
+noforce sim:/controller/opcode
+run
+force -freeze sim:/controller/opcode 1100 0
+run
+force -freeze sim:/controller/opcode 1111 0
+run
+force -freeze sim:/controller/opcode 1110 0
+run
+noforce sim:/controller/opcode
+run
+force -freeze sim:/controller/opcode 1110 0
+run
+# End time: 23:02:47 on Nov 27,2017, Elapsed time: 0:01:07
+# Errors: 0, Warnings: 0

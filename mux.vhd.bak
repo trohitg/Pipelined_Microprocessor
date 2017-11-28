@@ -1,0 +1,22 @@
+library std;
+use std.standard.all;
+
+library ieee;
+use ieee.numeric_std.all;
+Use IEEE.STD_LOGIC_1164.all;
+
+entity mux is
+generic (inputs: integer:= 4; signals: integer := 2; bits: integer := 2);
+   port(din: in array((inputs) - 1)) of bit_vector(bits-1 downto 0);
+        dout: out bit_vector(bits-1 downto 0);
+        sel: in bit_vector(bits-1 downto 0));
+end entity;
+
+
+architecture behavioral of mux is
+
+begin
+
+	dout <= din(to_integer(unsigned(to_stdlogicvector(sel))));
+ 
+end;

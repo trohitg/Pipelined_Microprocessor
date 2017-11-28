@@ -1,0 +1,36 @@
+library ieee;
+use ieee.numeric_std.all;
+Use IEEE.STD_LOGIC_1164.all;
+
+package array_in is
+  type array_chain is array (natural range <>) of bit_vector(natural range <>);
+end package;
+
+package body array_in is
+end package body;
+
+library std;
+use std.standard.all;
+
+library ieee;
+use ieee.numeric_std.all;
+Use IEEE.STD_LOGIC_1164.all;
+
+use work.array_in;
+
+
+entity mux is
+generic (inputs: integer:= 4; signals: integer := 2; bits: integer := 16);
+   port(din: in array_in.array_chain(0 to ((inputs) - 1))((bits-1) downto 0);
+        dout: out bit_vector(bits-1 downto 0);
+        sel: in bit_vector(bits-1 downto 0));
+end entity;
+
+
+architecture behavioral of mux is
+
+begin
+
+	dout <= din(to_integer(unsigned(to_stdlogicvector(sel))));
+ 
+end;
